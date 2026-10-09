@@ -1,5 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
 import { MusicLabHome } from './components/organisms/MusicLabHome';
 import './styles.css';
 
@@ -9,8 +11,15 @@ if (!rootElement) {
   throw new Error('The root element is missing.');
 }
 
+const  router = createBrowserRouter([
+  {
+    path: '/',
+    element: <MusicLabHome />,
+  },
+]);
+
 createRoot(rootElement).render(
   <StrictMode>
-    <MusicLabHome />
+    <RouterProvider router={router} />
   </StrictMode>,
 );
