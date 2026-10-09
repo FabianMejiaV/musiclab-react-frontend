@@ -1,0 +1,16 @@
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { MusicLabHome } from './components/organisms/MusicLabHome';
+import './styles.css';
+
+const rootElement = document.getElementById('root');
+
+if (!rootElement) {
+  throw new Error('The root element is missing.');
+}
+
+createRoot(rootElement).render(
+  <StrictMode>
+    <MusicLabHome />
+  </StrictMode>,
+);
